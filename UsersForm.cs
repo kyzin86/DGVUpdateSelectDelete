@@ -61,7 +61,7 @@ namespace DGV
 
         private void сменитьПользователяToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            //this.Hide();
+            this.Hide();
             RegistrationForm regForm = new RegistrationForm();
             regForm.ShowDialog();
             this.Close();
