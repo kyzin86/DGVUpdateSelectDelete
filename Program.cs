@@ -9,7 +9,7 @@ namespace DGV
     static class Program
     {
         /// <summary>
-        /// Главная точка входа для приложен
+        /// Главная точка входа для приложения.
         /// </summary>
         [STAThread]
         static void Main()
