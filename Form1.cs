@@ -17,7 +17,6 @@ namespace DGV
         private SqlConnection sqlConnection = null;   //Подключаем класс SqlConnection
         private SqlDataAdapter adapter = null;       //Подключаем класс SqlDataAdapter
         private DataTable table;                     //Подключаем класс DataTable
-        
         public Form1()
         {
             InitializeComponent();
@@ -181,6 +180,6 @@ namespace DGV
             regForm.ShowDialog();
             this.Close();
         }
+        //**************************************************************************
     }
-
-}
+    }

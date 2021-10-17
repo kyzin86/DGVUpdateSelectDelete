@@ -57,10 +57,10 @@ namespace DGV
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.перейтиНаГлавноеОкноToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.добавитьРаботникаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.оРазработчикеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.перейтиНаГлавноеОкноToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.facultetDataSet)).BeginInit();
@@ -85,7 +85,6 @@ namespace DGV
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(847, 342);
             this.dataGridView1.TabIndex = 0;
-            //this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             // 
             // Column1
             // 
@@ -310,24 +309,17 @@ namespace DGV
             this.toolStripMenuItem1.Size = new System.Drawing.Size(69, 29);
             this.toolStripMenuItem1.Text = "Файл";
             // 
-            // перейтиНаГлавноеОкноToolStripMenuItem
-            // 
-            this.перейтиНаГлавноеОкноToolStripMenuItem.Name = "перейтиНаГлавноеОкноToolStripMenuItem";
-            this.перейтиНаГлавноеОкноToolStripMenuItem.Size = new System.Drawing.Size(299, 34);
-            this.перейтиНаГлавноеОкноToolStripMenuItem.Text = "Сменить пользователя";
-            this.перейтиНаГлавноеОкноToolStripMenuItem.Click += new System.EventHandler(this.перейтиНаГлавноеОкноToolStripMenuItem_Click);
-            // 
             // добавитьРаботникаToolStripMenuItem
             // 
             this.добавитьРаботникаToolStripMenuItem.Name = "добавитьРаботникаToolStripMenuItem";
-            this.добавитьРаботникаToolStripMenuItem.Size = new System.Drawing.Size(299, 34);
+            this.добавитьРаботникаToolStripMenuItem.Size = new System.Drawing.Size(323, 34);
             this.добавитьРаботникаToolStripMenuItem.Text = "Добавить работника";
             this.добавитьРаботникаToolStripMenuItem.Click += new System.EventHandler(this.добавитьРаботникаToolStripMenuItem_Click);
             // 
             // выходToolStripMenuItem1
             // 
             this.выходToolStripMenuItem1.Name = "выходToolStripMenuItem1";
-            this.выходToolStripMenuItem1.Size = new System.Drawing.Size(299, 34);
+            this.выходToolStripMenuItem1.Size = new System.Drawing.Size(323, 34);
             this.выходToolStripMenuItem1.Text = "Выход";
             this.выходToolStripMenuItem1.Click += new System.EventHandler(this.выходToolStripMenuItem1_Click);
             // 
@@ -337,6 +329,13 @@ namespace DGV
             this.оРазработчикеToolStripMenuItem.Size = new System.Drawing.Size(161, 29);
             this.оРазработчикеToolStripMenuItem.Text = "О разработчике";
             this.оРазработчикеToolStripMenuItem.Click += new System.EventHandler(this.оРазработчикеToolStripMenuItem_Click);
+            // 
+            // перейтиНаГлавноеОкноToolStripMenuItem
+            // 
+            this.перейтиНаГлавноеОкноToolStripMenuItem.Name = "перейтиНаГлавноеОкноToolStripMenuItem";
+            this.перейтиНаГлавноеОкноToolStripMenuItem.Size = new System.Drawing.Size(299, 34);
+            this.перейтиНаГлавноеОкноToolStripMenuItem.Text = "Сменить пользователя";
+            this.перейтиНаГлавноеОкноToolStripMenuItem.Click += new System.EventHandler(this.перейтиНаГлавноеОкноToolStripMenuItem_Click);
             // 
             // Form1
             // 
