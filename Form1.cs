@@ -180,6 +180,16 @@ namespace DGV
             regForm.ShowDialog();
             this.Close();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            SqlDataAdapter update = new SqlDataAdapter("SELECT * FROM Students", sqlConnection);
+            SqlCommandBuilder cmbd = new SqlCommandBuilder(update);
+            DataSet ds = new DataSet();
+            update.Update(ds, "Students");
+            ds.AcceptChanges();
+            dataGridView1.DataSource = ds.Tables["Students"];
+        }
         //**************************************************************************
     }
-    }
+}
