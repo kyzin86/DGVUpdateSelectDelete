@@ -17,8 +17,6 @@ namespace DGV
         private SqlConnection sqlConnection = null;   //Подключаем класс SqlConnection
         private SqlDataAdapter adapter = null;       //Подключаем класс SqlDataAdapter
         private DataTable table;                     //Подключаем класс DataTable
-        private SqlCommandBuilder sqlBuiler = null;
-        private DataSet dataset = null;
         public Form1()
         {
             InitializeComponent();
@@ -41,8 +39,6 @@ namespace DGV
             adapter.Fill(table);
             dataGridView1.RowHeadersVisible = false;   //убрать первую колонку
             dataGridView1.DataSource = table;
-
-            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -185,45 +181,5 @@ namespace DGV
             this.Close();
         }
         //**************************************************************************
-       
-private void button5_Click(object sender, EventArgs e)
-        {
-            
-            //dataset = new DataSet();
-            //SqlDataAdapter.Fill(dataset, "Students");
-            //DataGridView1.DataSourse = dataset.Tables["Students"];
-            //int r = e.RowIndex;
-            //dataSet.Tables["Students"].Rows[r]["FirstName"] = DataGridView1.Rows[r].Cells["FirstName"].Value;
-            //dataSet.Tables["Students"].Rows[r]["LastName"] = DataGridView1.Rows[r].Cells["LastName"].Value;
-            //dataSet.Tables["Students"].Rows[r]["Adress"] = DataGridView1.Rows[r].Cells["Adress"].Value;
-
-            //SqlDataAdapter.Update(dataSet, "Students");
-
-        }
-        private void dataGridView1_RowValidated(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                DataTable changes = ((DataTable)dataGridView1.DataSource).GetChanges();
-                if (changes != null)
-                {
-                    SqlCommandBuilder mcb = new SqlCommandBuilder(SqlDataAdapter);
-                    SqlDataAdapter.UpdateCommand = mcb.GetUpdateCommand();
-                    SqlDataAdapter.Update(changes);
-                    ((DataTable)dataGridView1.DataSource).AcceptChanges();
-
-                    MessageBox.Show("Cell Updated");
-                    return;
-                }
-
-
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-
-        }
+    }
     }
