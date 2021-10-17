@@ -57,10 +57,11 @@ namespace DGV
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.перейтиНаГлавноеОкноToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.добавитьРаботникаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.оРазработчикеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.перейтиНаГлавноеОкноToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.facultetDataSet)).BeginInit();
@@ -134,7 +135,7 @@ namespace DGV
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(260, 486);
+            this.button1.Location = new System.Drawing.Point(175, 486);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(154, 45);
             this.button1.TabIndex = 1;
@@ -309,17 +310,24 @@ namespace DGV
             this.toolStripMenuItem1.Size = new System.Drawing.Size(69, 29);
             this.toolStripMenuItem1.Text = "Файл";
             // 
+            // перейтиНаГлавноеОкноToolStripMenuItem
+            // 
+            this.перейтиНаГлавноеОкноToolStripMenuItem.Name = "перейтиНаГлавноеОкноToolStripMenuItem";
+            this.перейтиНаГлавноеОкноToolStripMenuItem.Size = new System.Drawing.Size(299, 34);
+            this.перейтиНаГлавноеОкноToolStripMenuItem.Text = "Сменить пользователя";
+            this.перейтиНаГлавноеОкноToolStripMenuItem.Click += new System.EventHandler(this.перейтиНаГлавноеОкноToolStripMenuItem_Click);
+            // 
             // добавитьРаботникаToolStripMenuItem
             // 
             this.добавитьРаботникаToolStripMenuItem.Name = "добавитьРаботникаToolStripMenuItem";
-            this.добавитьРаботникаToolStripMenuItem.Size = new System.Drawing.Size(323, 34);
+            this.добавитьРаботникаToolStripMenuItem.Size = new System.Drawing.Size(299, 34);
             this.добавитьРаботникаToolStripMenuItem.Text = "Добавить работника";
             this.добавитьРаботникаToolStripMenuItem.Click += new System.EventHandler(this.добавитьРаботникаToolStripMenuItem_Click);
             // 
             // выходToolStripMenuItem1
             // 
             this.выходToolStripMenuItem1.Name = "выходToolStripMenuItem1";
-            this.выходToolStripMenuItem1.Size = new System.Drawing.Size(323, 34);
+            this.выходToolStripMenuItem1.Size = new System.Drawing.Size(299, 34);
             this.выходToolStripMenuItem1.Text = "Выход";
             this.выходToolStripMenuItem1.Click += new System.EventHandler(this.выходToolStripMenuItem1_Click);
             // 
@@ -330,18 +338,22 @@ namespace DGV
             this.оРазработчикеToolStripMenuItem.Text = "О разработчике";
             this.оРазработчикеToolStripMenuItem.Click += new System.EventHandler(this.оРазработчикеToolStripMenuItem_Click);
             // 
-            // перейтиНаГлавноеОкноToolStripMenuItem
+            // button5
             // 
-            this.перейтиНаГлавноеОкноToolStripMenuItem.Name = "перейтиНаГлавноеОкноToolStripMenuItem";
-            this.перейтиНаГлавноеОкноToolStripMenuItem.Size = new System.Drawing.Size(299, 34);
-            this.перейтиНаГлавноеОкноToolStripMenuItem.Text = "Сменить пользователя";
-            this.перейтиНаГлавноеОкноToolStripMenuItem.Click += new System.EventHandler(this.перейтиНаГлавноеОкноToolStripMenuItem_Click);
+            this.button5.Location = new System.Drawing.Point(347, 486);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(148, 45);
+            this.button5.TabIndex = 18;
+            this.button5.Text = "button5";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(871, 552);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -407,6 +419,7 @@ namespace DGV
         private System.Windows.Forms.ToolStripMenuItem добавитьРаботникаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оРазработчикеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem перейтиНаГлавноеОкноToolStripMenuItem;
+        private System.Windows.Forms.Button button5;
     }
 }
 
