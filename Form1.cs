@@ -28,7 +28,7 @@ namespace DGV
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "facultetDataSet.Students". При необходимости она может быть перемещена или удалена.
             this.studentsTableAdapter.Fill(this.facultetDataSet.Students);
-           
+
             //Подключение к БД
             sqlConnection = new SqlConnection(@"Data Source=DESKTOP-0RM14IT\SQLEXPRESS;Initial Catalog=facultet;Integrated Security=True");
             sqlConnection.Open();
@@ -69,7 +69,7 @@ namespace DGV
                 dataGridView1.DataSource = table;
                 //command.ExecuteNonQuery().ToString();
             }
-           
+
         }
         // Сбрасываем фильтр Поиска
         private void button3_Click(object sender, EventArgs e)
@@ -84,7 +84,7 @@ namespace DGV
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
             (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = $"FirstName LIKE '%{textBox4.Text}%'";
-           
+
         }
         //**************************************************************************
 
@@ -180,7 +180,21 @@ namespace DGV
             regForm.ShowDialog();
             this.Close();
         }
-        //**************************************************************************
+        private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            SqlCommand sqlCommand = new SqlCommand();
+            // создаём запрос
+            var sql = @"UPDATE Students
+                 SET {dataGridView1.Columns[e.ColumnIndex].HeaderText} = @param
+                 WHERE {dataGridView.Columns[0].HeaderText} = @id";
+
+            // добавляем параметры
+            sqlCommand.Parameters.AddWithValue("param", dataGridView1[e.ColumnIndex, e.RowIndex].Value);
+            sqlCommand.Parameters.AddWithValue("id", dataGridView1[0, e.RowIndex].Value);
+            //**************************************************************************
+        }
+
+    
     }
 
 }
