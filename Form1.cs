@@ -180,21 +180,7 @@ namespace DGV
             regForm.ShowDialog();
             this.Close();
         }
-        private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            SqlCommand sqlCommand = new SqlCommand();
-            // создаём запрос
-            var sql = @"UPDATE Students
-                 SET {dataGridView1.Columns[e.ColumnIndex].HeaderText} = @param
-                 WHERE {dataGridView.Columns[0].HeaderText} = @id";
-
-            // добавляем параметры
-            sqlCommand.Parameters.AddWithValue("param", dataGridView1[e.ColumnIndex, e.RowIndex].Value);
-            sqlCommand.Parameters.AddWithValue("id", dataGridView1[0, e.RowIndex].Value);
-            //**************************************************************************
-        }
-
-    
+        
     }
 
 }
