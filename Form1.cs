@@ -27,10 +27,10 @@ namespace DGV
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "facultetDataSet.Students". При необходимости она может быть перемещена или удалена.
-            this.studentsTableAdapter.Fill(this.facultetDataSet.Students);
+            //this.studentsTableAdapter.Fill(this.facultetDataSet.Students);
 
             //Подключение к БД
-            sqlConnection = new SqlConnection(@"Data Source=DESKTOP-0RM14IT\SQLEXPRESS;Initial Catalog=facultet;Integrated Security=True");
+            sqlConnection = new SqlConnection(@"Data Source=DESKTOP-UIE3VBD;Initial Catalog=facultet;Integrated Security=True");
             sqlConnection.Open();
 
             //Вывод ДатаГридВью, Адаптер и ДатаТэйбл
@@ -77,8 +77,7 @@ namespace DGV
             (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = null;
             textBox4.Clear();
         }
-        //**************************************************************************
-
+      
 
         //фильтрация по столбцу Имя сразу при наборе текста в поле с помощью св-ва TextChanged у textBox4
         private void textBox4_TextChanged(object sender, EventArgs e)
@@ -86,7 +85,7 @@ namespace DGV
             (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = $"FirstName LIKE '%{textBox4.Text}%'";
 
         }
-        //**************************************************************************
+       
 
 
         //фильтрация по столбцу Имя в ComboBox
