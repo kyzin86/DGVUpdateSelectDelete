@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
+using System.Data; // подключаем необходимые компоненты
+using System.Data.SqlClient;   // подключаем необходимые компоненты
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -33,7 +33,7 @@ namespace DGV
             sqlConnection = new SqlConnection(@"Data Source=DESKTOP-0RM14IT\SQLEXPRESS;Initial Catalog=facultet;Integrated Security=True");
             sqlConnection.Open();
 
-            //Вывод ДатаГридВью
+            //Вывод ДатаГридВью, Адаптер и ДатаТэйбл
             adapter = new SqlDataAdapter("SELECT Id, FirstName, LastName, Adress FROM Students", sqlConnection);
             table = new DataTable();
             adapter.Fill(table);
