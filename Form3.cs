@@ -25,6 +25,7 @@ namespace DGV
         {
             if (textBox1.Text == "admin" && textBox2.Text == "1234")
             {
+                this.Hide();
                 UsersForm usersform = new UsersForm();
                 usersform.ShowDialog();
                 this.Close();
@@ -41,7 +42,7 @@ namespace DGV
             String loginUser = textBox1.Text;
             String passUser = textBox2.Text;
 
-            sqlConnection = new SqlConnection(@"Data Source=DESKTOP-0RM14IT\SQLEXPRESS;Initial Catalog=facultet;Integrated Security=True");
+            sqlConnection = new SqlConnection(@"Data Source=DESKTOP-UIE3VBD;Initial Catalog=facultet;Integrated Security=True");
             sqlConnection.Open();
 
             DataTable table = new DataTable();

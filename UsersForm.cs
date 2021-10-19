@@ -24,9 +24,9 @@ namespace DGV
         private void UsersForm_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "facultetDataSet1.users". При необходимости она может быть перемещена или удалена.
-            this.usersTableAdapter.Fill(this.facultetDataSet1.users);
+            //this.usersTableAdapter.Fill(this.facultetDataSet1.users);
             
-            sqlConnection = new SqlConnection(@"Data Source=DESKTOP-0RM14IT\SQLEXPRESS;Initial Catalog=facultet;Integrated Security=True");
+            sqlConnection = new SqlConnection(@"Data Source=DESKTOP-UIE3VBD;Initial Catalog=facultet;Integrated Security=True");
             sqlConnection.Open();
             adapter = new SqlDataAdapter("SELECT id, FirstName, LastName, login, password FROM users", sqlConnection);
             table = new DataTable();

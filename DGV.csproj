@@ -57,6 +57,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>facultetDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="facultetDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>facultetDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +130,17 @@
     </None>
     <None Include="facultetDataSet1.xss">
       <DependentUpon>facultetDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="facultetDataSet2.xsc">
+      <DependentUpon>facultetDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="facultetDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>facultetDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="facultetDataSet2.xss">
+      <DependentUpon>facultetDataSet2.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
