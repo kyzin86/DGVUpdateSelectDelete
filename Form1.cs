@@ -8,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OleDb;
+
+// настройка DGV SelectionMode -> FullRowSelect, AutoSizeColumnsMode -> Fill,  события MouseDoubleClick -> создаем метод два раза кликнув
 
 
 namespace DGV
@@ -17,6 +20,7 @@ namespace DGV
         private SqlConnection sqlConnection = null;   //Подключаем класс SqlConnection
         private SqlDataAdapter adapter = null;       //Подключаем класс SqlDataAdapter
         private DataTable table;                     //Подключаем класс DataTable
+        
         public Form1()
         {
             InitializeComponent();
@@ -179,6 +183,36 @@ namespace DGV
             regForm.ShowDialog();
             this.Close();
         }
-        
+
+
+
+       
+
+        private void dataGridView1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            textBox6.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            textBox7.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            textBox8.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            textBox9.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            SqlCommand command = new SqlCommand(
+            //$"UPDATE [Students] SET FirstName = 'ааа', LastName = 'ббб', Adress = 'ввв' WHERE id = 74",
+            // sqlConnection);
+
+                $"UPDATE [Students] SET FirstName = N'{textBox7.Text}', LastName = N'{textBox8.Text}', Adress = N'{textBox9.Text}' WHERE id = {int.Parse(textBox6.Text)}",
+                 sqlConnection);
+            MessageBox.Show("Обновлено записей: " + command.ExecuteNonQuery().ToString());
+            textBox6.Clear();
+            textBox7.Clear();
+            textBox8.Clear();
+            textBox9.Clear();
+            table.Clear();         // обновление таблицы после добавления записи
+            adapter.Fill(table);
+            dataGridView1.DataSource = table;
+        }
     }
+
 }

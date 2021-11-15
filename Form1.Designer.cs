@@ -31,6 +31,10 @@ namespace DGV
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.facultetDataSet = new DGV.facultetDataSet();
             this.button1 = new System.Windows.Forms.Button();
@@ -60,10 +64,15 @@ namespace DGV
             this.facultetDataSet2 = new DGV.facultetDataSet2();
             this.studentsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.studentsTableAdapter1 = new DGV.facultetDataSet2TableAdapters.StudentsTableAdapter();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.contextMenuStrip3 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.facultetDataSet)).BeginInit();
@@ -76,7 +85,9 @@ namespace DGV
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -87,10 +98,50 @@ namespace DGV
             this.dataGridView1.Location = new System.Drawing.Point(8, 23);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(565, 222);
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(501, 222);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseDoubleClick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "id";
+            this.Column1.FillWeight = 45.91636F;
+            this.Column1.HeaderText = "ID";
+            this.Column1.MinimumWidth = 8;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.FillWeight = 121.8274F;
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "Имя";
+            this.firstNameDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            this.firstNameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.FillWeight = 109.1017F;
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "Фамилия";
+            this.lastNameDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            this.lastNameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // adressDataGridViewTextBoxColumn
+            // 
+            this.adressDataGridViewTextBoxColumn.DataPropertyName = "Adress";
+            this.adressDataGridViewTextBoxColumn.FillWeight = 123.1546F;
+            this.adressDataGridViewTextBoxColumn.HeaderText = "Адрес";
+            this.adressDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.adressDataGridViewTextBoxColumn.Name = "adressDataGridViewTextBoxColumn";
+            this.adressDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // studentsBindingSource
             // 
@@ -274,7 +325,7 @@ namespace DGV
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(581, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(713, 24);
             this.menuStrip1.TabIndex = 17;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -330,47 +381,84 @@ namespace DGV
             // 
             this.studentsTableAdapter1.ClearBeforeFill = true;
             // 
-            // Column1
+            // contextMenuStrip2
             // 
-            this.Column1.DataPropertyName = "id";
-            this.Column1.HeaderText = "ID";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column1.Width = 40;
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
             // 
-            // firstNameDataGridViewTextBoxColumn
+            // textBox6
             // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "Имя";
-            this.firstNameDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            this.firstNameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.firstNameDataGridViewTextBoxColumn.Width = 150;
+            this.textBox6.Location = new System.Drawing.Point(552, 27);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
+            this.textBox6.Size = new System.Drawing.Size(134, 20);
+            this.textBox6.TabIndex = 18;
             // 
-            // lastNameDataGridViewTextBoxColumn
+            // textBox7
             // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "Фамилия";
-            this.lastNameDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            this.lastNameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.lastNameDataGridViewTextBoxColumn.Width = 150;
+            this.textBox7.Location = new System.Drawing.Point(552, 53);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(134, 20);
+            this.textBox7.TabIndex = 19;
             // 
-            // adressDataGridViewTextBoxColumn
+            // textBox8
             // 
-            this.adressDataGridViewTextBoxColumn.DataPropertyName = "Adress";
-            this.adressDataGridViewTextBoxColumn.HeaderText = "Адрес";
-            this.adressDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.adressDataGridViewTextBoxColumn.Name = "adressDataGridViewTextBoxColumn";
-            this.adressDataGridViewTextBoxColumn.Width = 150;
+            this.textBox8.Location = new System.Drawing.Point(552, 79);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(134, 20);
+            this.textBox8.TabIndex = 20;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(552, 105);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(134, 20);
+            this.textBox9.TabIndex = 21;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(552, 147);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(134, 44);
+            this.button5.TabIndex = 22;
+            this.button5.Text = "внести изменения";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
+            // 
+            // contextMenuStrip3
+            // 
+            this.contextMenuStrip3.Name = "contextMenuStrip3";
+            this.contextMenuStrip3.Size = new System.Drawing.Size(61, 4);
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(409, 2);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(100, 20);
+            this.textBox10.TabIndex = 24;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(365, 5);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(40, 15);
+            this.label6.TabIndex = 25;
+            this.label6.Text = "поиск";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(581, 359);
+            this.ClientSize = new System.Drawing.Size(713, 359);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.textBox10);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.textBox6);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -438,6 +526,15 @@ namespace DGV
         private facultetDataSet2 facultetDataSet2;
         private System.Windows.Forms.BindingSource studentsBindingSource1;
         private facultetDataSet2TableAdapters.StudentsTableAdapter studentsTableAdapter1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip3;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
